@@ -279,7 +279,8 @@ button:hover{
 
 .circle-txt-bot{
     display: flex;
-    background-color: rgb(33, 41, 53);
+    /* background-color: rgb(73, 47, 125); */
+    background: linear-gradient(to right, rgb(23, 23, 144), rgb(117, 21, 152));  ;
     border-radius: 10px;
     height: 50px;
     width: 50px;
@@ -298,7 +299,7 @@ button:hover{
 
 .circle-txt-user{
     display: flex;
-    background-color: rgb(33, 41, 53);
+    background-color:  rgb(33, 41, 53);
     border-radius: 10px;
     height: 50px;
     width: 50px;
