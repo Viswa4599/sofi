@@ -3,10 +3,12 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
     overflow: hidden;
     position: relative;
+    /* justify-content: right; */
 }
 
 .background {
@@ -15,7 +17,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('assets/sofi-park.jpeg'); /* Path to your background image */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -23,49 +24,305 @@ body {
     z-index: -1; /* Place the background behind the content */
 }
 
-.chat-container {
-    width: 400px;
-    background-color: rgba(192, 192, 192, 0.95); /* Slightly transparent silver color */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* White shadow to make the chatbox pop */
-    z-index: 1; /* Place the chat container above the background */
-}
-
-
-
-
-.chat-header {
+.top-bar{
+    height: 10vh;
     background-color: #333;
     color:white;
-    font: 16px Arial, Helvetica, sans-serif;
-    padding: 10px;
+    
+    /* padding: 10px; */
     display: flex;
     align-items: center;
+    flex-direction: row;
+    /* position: relative; */
+    
+}
+.top-bar img{
+    margin-left: 2%;
+    
+}
+
+.top-text{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.top-text h2{
+    margin: 0;
+    font: 35px Arial, Helvetica, sans-serif;
+}
+
+.top-text h4{
+    margin: 0;
+    margin-top: 5px;
+    font: 15px Arial, Helvetica, sans-serif;
+
 }
 
 .dp {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin-right: 10px;
 }
 
+.bottom-items{
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-content: center; */
+    overflow: hidden;
+    position: relative;
+    /* justify-content: right; */
+}
+
+
+
+.sofi-info{
+    background: linear-gradient(to top, rgb(1, 1, 114), rgb(68, 7, 91));    
+    /* font: Arial, Helvetica, sans-serif; */
+    font-family: Inter,apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","Fira Sans",Roboto,Oxygen,Ubuntu,"Droid Sans",Arial,sans-serif;
+    width:15%;
+    height: 100%;
+    z-index: 1;
+    justify-content: center;
+    display: flex;
+    /* flex-direction: column; */
+    position: relative;
+    /* border: solid black 1px;
+    border-radius: 10px; */
+}
+
+iframe{
+    position: absolute;
+    margin-top: 0%;
+    /* border-radius: 50px; */
+    /* border: 4px solid white; */
+}
+
+
+.bio{
+    position: absolute;
+    display: flex;
+    margin-top: 102%;
+    /* background: linear-gradient(to bottom, rgb(220, 220, 220), rgb(169, 168, 168));     */
+    background-color: rgba(12, 10, 42, 0);
+    /* border: solid 0.5px #ffffff8a; */
+    /* border-top: solid 1px #afadad3a;; */
+    width: 90%;
+    height: 10%;
+    /* border-radius: 5px; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+.contact-icons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: absolute;
+    margin-top: 750px;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-link {
+    color: #e8e4e4;               /* Color of text */
+    text-decoration: none;    /* Remove underline */
+    font-size: 50px;         /* Adjust size as needed */
+    /* padding: 10px;            Add some padding around the link */
+    
+}
+
+.email-link:hover {
+    color: #ffffff;               /* Darker color on hover */
+}
+
+.insta-link {
+    color: #e8e4e4;               /* Color of text */
+    text-decoration: none;    /* Remove underline */
+    font-size: 50px;         /* Adjust size as needed */
+    padding: 10px;           /* Add some padding around the link */
+    margin-left: 20px;
+}
+
+.insta-link:hover {
+    color: #ffffff;               /* Darker color on hover */
+}
+
+
+.chat-container {
+    width: 85%;
+    height: 100%;
+    background-color: rgba(235, 235, 235, 0.95); /* Slightly transparent silver color */
+    /* border-radius: 10px; */
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* White shadow to make the chatbox pop */
+    z-index: 1; /* Place the chat container above the background */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* overflow-y: scroll; */
+}
+
+
+
+
+
 .chat-window {
-    height: 400px;
-    overflow-y: scroll;
-    padding: 10px;
+    position: relative;
+    height: 100%;
+    margin-top: 0;
+    padding: 5px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    /* justify-content:start; */
+    align-items: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-bottom: 120px;
 }
+
+.chat-input {
+    width: 70%;
+    height: 5%;
+    padding: 10px;
+    display: flex;
+    position: absolute;
+    margin-top: 750px;
+    display: flex;
+    flex-direction: row;
+    /* background-color: #007AFF; */
+    background: linear-gradient(to top, rgba(1, 1, 114, 0.477), rgba(69, 7, 91, 0.181));  
+    border-radius: 20px;
+    
+    /* justify-content: end; */
+    /* margin-left: 20%; */
+
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 5px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 5px;
+    /* height: 50%; */
+    /* width: */
+    margin-top: 0%;
+    width: 50%;
+    /* margin-left: 2%; */
+
+}
+
+button {
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    align-items: center;
+    justify-content: center;
+    background-image: url('assets/send.svg');
+    background-size: cover;
+    width: 5%;
+    background-position: center;
+    transform: rotate(45deg);
+    backface-visibility: hidden;
+
+}
+
+button:hover{
+    background-image: url("assets/sent.svg");
+}
+
 .message {
+    display: flex;
+    /* margin: 5px; */
+    padding: 12px 16px; /* Increased padding for better spacing */
+    color: rgb(52, 52, 52);
+    font: 16px Arial, Helvetica, sans-serif;
+    /* border-radius: 18px;  */
+    position: relative; /* Changed from 'absolute' so that messages flow naturally */
+    width: 99%;
+    max-width: 100%;
+    /* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); Optional: Adds a subtle shadow for depth */
+    /* display: inline-block; Keeps the message block inline */
+    clear: both; /* Prevents floats from affecting the layout */
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+.message p{
+    width: 50%;
+}
+
+.message.bot {
+    background-color: #e1dede;
+    border-top: 1px solid rgb(156, 155, 154);
+    border-bottom: 1px solid rgb(156, 155, 154);
+    /* margin-left: 5px; 
+       float: left; */
+}
+
+.circle-txt-bot{
+    display: flex;
+    background-color: rgb(33, 41, 53);
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: white;
+}
+
+.message.user {
+    background-color: rgba(235, 235, 235, 0.95); /* Blue color for user messages */
+    border-bottom: 1px solid rgb(156, 155, 154);
+    /* margin-right: 5px;
+    float: left;  */
+}
+
+.circle-txt-user{
+    display: flex;
+    background-color: rgb(33, 41, 53);
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: white;
+}
+
+.message-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* .message {
     margin: 5px;
     padding: 10px;
     color: white;
     font: 16px Arial, Helvetica, sans-serif;
     border-radius: 18px;
-    position: relative;
-    /* max-width: 80%; */
+    position: absolute;
+    /* max-width: 80%;
 }
 
 .message.bot {
@@ -74,12 +331,12 @@ body {
 }
 
 .message.user {
-    background-color: #007AFF; /* Blue color for user messages */
-    color: white; /* Text color for user messages */
-    align-self: flex-end;
-}
+    background-color: #007AFF; /* Blue color for user messages 
+    color: white; /* Text color for user messages 
+    /* align-self: flex-end; 
+} */
 
-.message.user::after {
+/* .message.user::after {
     content: "";
     position: absolute;
     right: -10px;
@@ -87,25 +344,5 @@ body {
     border-width: 10px;
     border-style: solid;
     border-color: transparent transparent transparent #007AFF;
-}
+} */
 
-.chat-input {
-    padding: 10px;
-    display: flex;
-}
-
-#user-input {
-    flex-grow: 1;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-}
-
-button {
-    padding: 5px 15px;
-    border: none;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-}

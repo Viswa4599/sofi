@@ -5,25 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Chat with Sofie Vega</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
 </head>
 <body>
+    <script src="scripts.js"></script>
+
     <div class="background"></div>
-    <div class="chat-container">
-        <div class="chat-header">
-            <img src="assets/sofi.jpeg" alt="Sofie Vega" class="dp">
-            <h2>Sofie Vega</h2>
-        </div>
-        <div class="chat-window" id="chat-window">
-            <!-- Initial chat message from Sofie -->
-            <div class="message bot">
-                <p>Hello! How can I assist you today?</p>
-            </div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
+    <div class="top-bar">
+        <img src="assets/sofi.jpeg" alt="Sofie Vega" class="dp">
+        <div class="top-text">
+            <h2>Sofi Vega</h2>
+            <h4>Hey there! I'm Sofi, your fav NYC virtual influencer and friend! Let's chat!</h4>
         </div>
     </div>
-    <script src="scripts.js"></script>
+
+    <div class="bottom-items">
+        <div class ="sofi-info">
+            <div class="bio">
+                <!-- <p>Hey there! I'm Sofi, your fav NYC virtual influencer and friend! Let's chat! </p> -->
+            </div>
+            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+            <iframe src="//lightwidget.com/widgets/3d252cbd8024559b933a893298c2e8b8.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+            <div class="contact-icons">
+                <a href="mailto:itssofivega@gmail.com" class="email-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a href="https://www.instagram.com/itssofivega/" class="insta-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="powered">
+                <p>Powered by Hume</p>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            
+            <div class="chat-window" id="chat-window">
+                <!-- Initial chat message from Sofie -->
+                <div class="message bot">
+                    <div class = "circle-txt-bot">SV</div>
+                    <p>Hii! How are youu</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button onclick="sendMessage()">
+                    <!-- <img src = "assets/send.png"> -->
+                </button>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
