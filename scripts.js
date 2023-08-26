@@ -44,7 +44,7 @@ function sendMessage() {
   var userMessageDiv = document.createElement("div");
   userMessageDiv.className = "message user";
 
-  userMessageDiv.innerHTML = `<div class = "circle-txt-user">YOU</div><p>${userInput}</p>`;
+  userMessageDiv.innerHTML = `<p>${userInput}</p>`; //<div class = "circle-txt-user">YOU</div>
   chatWindow.appendChild(userMessageDiv);
   document.getElementById("user-input").value = "";
 
@@ -78,7 +78,7 @@ function sendMessage() {
       current_context = data.context;
       var botMessageDiv = document.createElement("div");
       botMessageDiv.className = "message bot";
-      botMessageDiv.innerHTML = `<div class = "circle-txt-bot"> SV</div><p>${data.sofi}</p>`;
+      botMessageDiv.innerHTML = `<p>${data.sofi}</p>`; //<div class = "circle-txt-bot"> SV</div>
       chatWindow.appendChild(botMessageDiv);
       modelProcessing = false;
       scrollToBottom(chatWindow);
