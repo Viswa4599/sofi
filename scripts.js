@@ -11,6 +11,19 @@
 // chatWindow.appendChild(userSubscript);
 
 var initial_text = true;
+var sessionId = '';
+var current_context = 'act like a girl';
+var modelProcessing = false;
+
+document.addEventListener("DOMContentLoaded", function() {
+  var sessionId = generateRandomId();
+  console.log(sessionId);
+});
+
+function generateRandomId() {
+  return 'session_' + Math.random().toString(36).substr(2, 9);
+}
+
 
 // Function to auto-scroll to the bottom
 function scrollToBottom(element) {
@@ -18,6 +31,11 @@ function scrollToBottom(element) {
 }
 
 function sendMessage() {
+    if (modelProcessing) {
+      return; // Exit the function if the bot is still processing
+  }
+  modelProcessing = true;
+
   var userInput = document.getElementById("user-input").value;
   if (userInput.trim() === "") return;
 
@@ -31,14 +49,13 @@ function sendMessage() {
   document.getElementById("user-input").value = "";
 
   console.log("USER INPUT: " + userInput);
-  // Placeholder for API call
-  var apiUrl =
+  var apiUrl = 
     "https://jpaeewshfgzmzil5l322xzevue0bbvgl.lambda-url.us-east-1.on.aws/";
   var messageData = {
     input: userInput,
-    previous_context: "act like a girl",
+    previous_context: current_context,
     initial: initial_text,
-    session_id: "",
+    session_id: sessionId,
   };
 
   fetch(apiUrl, {
@@ -58,15 +75,32 @@ function sendMessage() {
     })
 
     .then((data) => {
-      // Assuming the response contains the bot's reply
+      current_context = data.context;
       var botMessageDiv = document.createElement("div");
       botMessageDiv.className = "message bot";
       botMessageDiv.innerHTML = `<div class = "circle-txt-bot"> SV</div><p>${data.sofi}</p>`;
       chatWindow.appendChild(botMessageDiv);
+      modelProcessing = false;
     })
     .catch((error) => console.error("Error:", error));
 
   scrollToBottom(chatWindow);
+
+  initial_text = false;
 }
 
-// session_id
+// Send message triggered when user presses enter
+document.getElementById("user-input").addEventListener("keyup", function(event) {
+  // Check if the pressed key was Enter
+  if (event.key === 'Enter' && !modelProcessing) {
+      // Prevent default behavior (like submitting a form)
+      event.preventDefault();
+
+      // Call the sendMessage function
+      sendMessage();
+  }
+});
+
+let sendButton = document.getElementById("sendButton");
+sendButton.disabled = modelProcessing; // Disable or enable the button based on the flag
+

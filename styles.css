@@ -192,7 +192,7 @@ iframe{
     align-items: center;
     overflow: hidden;
     overflow-y: scroll;
-    padding-bottom: 120px;
+    padding-bottom: 10vh;
 }
 
 .chat-input {
@@ -201,7 +201,7 @@ iframe{
     padding: 10px;
     display: flex;
     position: absolute;
-    margin-top: 600px;
+    margin-top: 80vh;
     display: flex;
     flex-direction: row;
     /* background-color: #007AFF; */
@@ -293,6 +293,7 @@ button:hover{
 .message.user {
     background-color: rgba(235, 235, 235, 0.95); /* Blue color for user messages */
     border-bottom: 1px solid rgb(156, 155, 154);
+    color: rgb(21, 21, 21);
     /* margin-right: 5px;
     float: left;  */
 }
