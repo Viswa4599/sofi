@@ -1,3 +1,4 @@
+
 // // Add this after appending the bot's message
 // var botSubscript = document.createElement("div");
 // botSubscript.className = "subscript";
@@ -9,6 +10,8 @@
 // userSubscript.className = "subscript";
 // userSubscript.textContent = "You";
 // chatWindow.appendChild(userSubscript);
+
+var initial_text = true;
 
 // Function to auto-scroll to the bottom
 function scrollToBottom(element) {
@@ -23,17 +26,18 @@ function sendMessage() {
   var chatWindow = document.getElementById("chat-window");
   var userMessageDiv = document.createElement("div");
   userMessageDiv.className = "message user";
-  // var circleUserText = document.createElement("div");
-  // circleUserText.className = "circle-txt-user";
-  // circleUserText.innerHTML = "YOU";
-  // userMessageDiv.appendChild(circleUserText);
+
   userMessageDiv.innerHTML = `<div class = "circle-txt-user">YOU</div><p>${userInput}</p>`;
   chatWindow.appendChild(userMessageDiv);
   document.getElementById("user-input").value = "";
 
+  console.log("USER INPUT: "+ userInput);
   // Placeholder for API call
-  var apiUrl = "https://your-api-endpoint.com/chat";
-  var messageData = { text: userInput };
+  var apiUrl = "https://jpaeewshfgzmzil5l322xzevue0bbvgl.lambda-url.us-east-1.on.aws/";
+  var messageData = { 
+    input: userInput,
+    previous_context: "act like a girl",
+    initial: initial_text };
 
   fetch(apiUrl, {
     method: "POST",
@@ -42,12 +46,19 @@ function sendMessage() {
     },
     body: JSON.stringify(messageData),
   })
-    .then((response) => response.json())
+  .then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    response.json();
+    console.log("RESPONSE: "+ response);
+})
+
     .then((data) => {
       // Assuming the response contains the bot's reply
       var botMessageDiv = document.createElement("div");
       botMessageDiv.className = "message bot";
-      botMessageDiv.innerHTML = `<div class = "circle-txt-bot"> SV</div><p>${data.reply}</p>`;
+      botMessageDiv.innerHTML = `<div class = "circle-txt-bot"> SV</div><p>${data.sofi}</p>`;
       chatWindow.appendChild(botMessageDiv);
     })
     .catch((error) => console.error("Error:", error));
@@ -57,5 +68,6 @@ function sendMessage() {
 
 
 
+// session_id
 
 
