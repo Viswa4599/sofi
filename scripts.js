@@ -1,4 +1,3 @@
-
 // // Add this after appending the bot's message
 // var botSubscript = document.createElement("div");
 // botSubscript.className = "subscript";
@@ -31,13 +30,16 @@ function sendMessage() {
   chatWindow.appendChild(userMessageDiv);
   document.getElementById("user-input").value = "";
 
-  console.log("USER INPUT: "+ userInput);
+  console.log("USER INPUT: " + userInput);
   // Placeholder for API call
-  var apiUrl = "https://jpaeewshfgzmzil5l322xzevue0bbvgl.lambda-url.us-east-1.on.aws/";
-  var messageData = { 
+  var apiUrl =
+    "https://jpaeewshfgzmzil5l322xzevue0bbvgl.lambda-url.us-east-1.on.aws/";
+  var messageData = {
     input: userInput,
     previous_context: "act like a girl",
-    initial: initial_text };
+    initial: initial_text,
+    session_id: "",
+  };
 
   fetch(apiUrl, {
     method: "POST",
@@ -46,13 +48,14 @@ function sendMessage() {
     },
     body: JSON.stringify(messageData),
   })
-  .then(response => {
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    response.json();
-    console.log("RESPONSE: "+ response);
-})
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      console.log("RESPONSE: " + response);
+      return response.json();
+    })
 
     .then((data) => {
       // Assuming the response contains the bot's reply
@@ -66,8 +69,4 @@ function sendMessage() {
   scrollToBottom(chatWindow);
 }
 
-
-
 // session_id
-
-
