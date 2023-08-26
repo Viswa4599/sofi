@@ -81,6 +81,7 @@ function sendMessage() {
       botMessageDiv.innerHTML = `<div class = "circle-txt-bot"> SV</div><p>${data.sofi}</p>`;
       chatWindow.appendChild(botMessageDiv);
       modelProcessing = false;
+      scrollToBottom(chatWindow);
     })
     .catch((error) => console.error("Error:", error));
 
