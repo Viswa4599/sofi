@@ -11,19 +11,18 @@
 // chatWindow.appendChild(userSubscript);
 
 var initial_text = true;
-var sessionId = '';
-var current_context = 'act like a girl';
+var sessionId = "";
+var current_context = "";
 var modelProcessing = false;
 
-document.addEventListener("DOMContentLoaded", function() {
-  var sessionId = generateRandomId();
+document.addEventListener("DOMContentLoaded", function () {
+  sessionId = generateRandomId();
   console.log(sessionId);
 });
 
 function generateRandomId() {
-  return 'session_' + Math.random().toString(36).substr(2, 9);
+  return "session_" + Math.random().toString(36).substr(2, 9);
 }
-
 
 // Function to auto-scroll to the bottom
 function scrollToBottom(element) {
@@ -31,8 +30,8 @@ function scrollToBottom(element) {
 }
 
 function sendMessage() {
-    if (modelProcessing) {
-      return; // Exit the function if the bot is still processing
+  if (modelProcessing) {
+    return; // Exit the function if the bot is still processing
   }
   modelProcessing = true;
 
@@ -49,7 +48,7 @@ function sendMessage() {
   document.getElementById("user-input").value = "";
 
   console.log("USER INPUT: " + userInput);
-  var apiUrl = 
+  var apiUrl =
     "https://jpaeewshfgzmzil5l322xzevue0bbvgl.lambda-url.us-east-1.on.aws/";
   var messageData = {
     input: userInput,
@@ -91,17 +90,18 @@ function sendMessage() {
 }
 
 // Send message triggered when user presses enter
-document.getElementById("user-input").addEventListener("keyup", function(event) {
-  // Check if the pressed key was Enter
-  if (event.key === 'Enter' && !modelProcessing) {
+document
+  .getElementById("user-input")
+  .addEventListener("keyup", function (event) {
+    // Check if the pressed key was Enter
+    if (event.key === "Enter" && !modelProcessing) {
       // Prevent default behavior (like submitting a form)
       event.preventDefault();
 
       // Call the sendMessage function
       sendMessage();
-  }
-});
+    }
+  });
 
 let sendButton = document.getElementById("sendButton");
 sendButton.disabled = modelProcessing; // Disable or enable the button based on the flag
-
