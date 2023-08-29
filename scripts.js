@@ -11,6 +11,7 @@
 // chatWindow.appendChild(userSubscript);
 
 // test
+// test 2
 var initial_text = true;
 var sessionId = "";
 var current_context = "";
