@@ -1,0 +1,33 @@
+# Node modules (if using npm or yarn for package management)
+node_modules/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor and IDE specific files/folders
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.log
+*.bak
+*.tmp
+
+# Build and distribution files
+dist/
+build/
+
+# Cache and temporary files
+*.cache
+*.log
+*.tmp
+
+# Other common directories/files to ignore
+*.lock
