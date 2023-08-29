@@ -10,6 +10,7 @@
 // userSubscript.textContent = "You";
 // chatWindow.appendChild(userSubscript);
 
+// test
 var initial_text = true;
 var sessionId = "";
 var current_context = "";
