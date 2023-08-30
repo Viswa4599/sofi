@@ -481,9 +481,12 @@ button:hover{
     }
     
     body {
-        height: var(--vh);
+        height: calc(var(--vh, 1vh) * 100);
     }
     
+    .top-bar{
+        height: 9vh;
+    }
 
     .top-text{
         margin: 0;
@@ -505,6 +508,9 @@ button:hover{
         display: none;
     }
 
+    .bottom-items{
+        height: 89vh;
+    }
     
     .sofi-info {
         display: none;
@@ -513,13 +519,13 @@ button:hover{
     .chat-container{
         width: 100%;
         justify-content: space-between; /* This will push the chat window and chat input apart */
-        height: 90vh; /* Adjust based on your design */
+        height: 89vh; /* Adjust based on your design */
         overflow: hidden;
     }
 
     .chat-window {
         position: relative;
-        height: 70%;
+        height: 80%;
         margin-top: 0;
         padding: 5px;
         display: flex;

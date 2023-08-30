@@ -26,14 +26,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function setVhVariable() {
   let vh = window.innerHeight * 0.01;
+  console.log("Calculated VH:", vh);
   document.documentElement.style.setProperty('--vh', `${vh}px`);
+  console.log("Set VH as:", `${vh}px`);
 }
 
+
+// setVhVariable();
 document.querySelector('#user-input').addEventListener('focus', setVhVariable);
 document.querySelector('#user-input').addEventListener('blur', setVhVariable);
 
 window.addEventListener('resize', setVhVariable);
-window.addEventListener('load', setVhVariable);
+window.addEventListener('DOMContentLoaded', setVhVariable);
+
+// window.addEventListener('load', setVhVariable);
 
 
 function generateRandomId() {
