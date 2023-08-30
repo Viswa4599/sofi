@@ -507,8 +507,15 @@ button:hover{
         align-items: center;
         overflow: hidden;
         overflow-y: scroll;
-        padding-bottom: 13vh;
+        padding-bottom: 20vh;
     }
+
+    .chat-input {
+        margin-top: 70vh;
+
+    
+    }
+    
 
     .message {
         margin: 5px;
