@@ -16,6 +16,7 @@ var initial_text = true;
 var sessionId = "";
 var current_context = "";
 var modelProcessing = false;
+var down = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   sessionId = generateRandomId();
@@ -107,3 +108,41 @@ document
 
 let sendButton = document.getElementById("sendButton");
 sendButton.disabled = modelProcessing; // Disable or enable the button based on the flag
+
+
+var dropdown = document.getElementById('info-btn-dropdown')
+
+function popUp(){
+  if(down == false){
+    dropdown.style.display = 'flex';
+    down = true;
+  }
+  else{
+    dropdown.style.display = 'none';
+    down = false;
+  }
+  
+}
+
+
+document.addEventListener('click', function(event) {
+  if (event.target.id == 'info-btn-dropdown' || event.target.id == 'info-btn'||
+  event.target.closest('#info-btn-dropdown') ||
+  event.target.closest('#info-btn')) {
+      return;
+  }
+
+  console.log('User clicked/tapped on the screen!');
+  if(down == true){
+    dropdown.style.display = 'none';
+    down = false;
+  }
+});
+
+function sendEmail() {
+  window.location.href = "mailto:itssofivega@gmail.com";
+}
+
+function openInsta() {
+  window.location.href = "https://www.instagram.com/itssofivega/";
+}
