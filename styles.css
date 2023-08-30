@@ -225,6 +225,10 @@ iframe{
 
 }
 
+.keyboard-active .chat-input{
+    margin-top: 50vh;
+}
+
 #user-input {
     flex-grow: 1;
     padding: 5px;

@@ -146,3 +146,17 @@ function sendEmail() {
 function openInsta() {
   window.location.href = "https://www.instagram.com/itssofivega/";
 }
+
+const chatInput = document.getElementById("chat-input"); 
+const chatContainer = document.querySelector(".chat-container"); 
+
+chatInput.addEventListener("focus", function() {
+    chatContainer.classList.add("keyboard-active");
+    console.log("Keyboard active");
+    chatInput.style.width = '100%';
+});
+
+chatInput.addEventListener("blur", function() {
+    chatContainer.classList.remove("keyboard-active");
+    console.log("Keyboard active");
+});
