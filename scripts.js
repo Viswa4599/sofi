@@ -24,25 +24,24 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log(sessionId);
 });
 
-let initialVh = window.innerHeight * 0.01;  // Store the initial vh value
-
 function setVhVariable() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  let vh = window.innerHeight * 0.01;
+  console.log("Calculated VH:", vh);
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  console.log("Set VH as:", `${vh}px`);
 }
 
 function resetVhVariable() {
-    document.documentElement.style.setProperty('--vh', `${initialVh}px`);
+  document.documentElement.style.setProperty('--vh', `${initialVh}px`);
 }
 
+
+// setVhVariable();
 document.querySelector('#user-input').addEventListener('focus', setVhVariable);
 document.querySelector('#user-input').addEventListener('blur', resetVhVariable);
-window.addEventListener('resize', setVhVariable);
-window.addEventListener('DOMContentLoaded', () => {
-    initialVh = window.innerHeight * 0.01;
-    setVhVariable();
-});
 
+window.addEventListener('resize', setVhVariable);
+window.addEventListener('DOMContentLoaded', setVhVariable);
 
 // window.addEventListener('load', setVhVariable);
 
