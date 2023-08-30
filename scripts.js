@@ -148,6 +148,7 @@ function openInsta() {
 }
 
 const chatInput = document.getElementById("chat-input"); 
+const userInput = document.getElementById("user-input");
 const chatContainer = document.querySelector(".chat-container"); 
 
 chatInput.addEventListener("focus", function() {
