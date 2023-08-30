@@ -1,3 +1,10 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scroll on the body */
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -498,7 +505,8 @@ button:hover{
     .chat-container{
         width: 100%;
         justify-content: space-between; /* This will push the chat window and chat input apart */
-        height: 100%; /* Adjust based on your design */
+        height: 90vh; /* Adjust based on your design */
+        overflow: hidden;
     }
 
     .chat-window {
