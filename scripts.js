@@ -152,28 +152,28 @@ const chatInput = document.getElementById("chat-input");
 const userInput = document.getElementById("user-input");
 const chatContainer = document.querySelector(".chat-container"); 
 
-window.addEventListener("resize", function() {
-  let currentHeight = window.innerHeight;
+// window.addEventListener("resize", function() {
+//   let currentHeight = window.innerHeight;
 
-  if (currentHeight < initialViewportHeight * 0.8) {
-      // Keyboard is probably visible
-      document.querySelector(".chat-input").style.marginTop = "50vh"; // Adjust as needed
-      chatInput.style.width = '100%';
-  } else {
-      // Keyboard is probably hidden
-      document.querySelector(".chat-input").style.marginTop = "70vh"; // Reset to original position
-      chatInput.style.width = '70%';
-  }
-});
+//   if (currentHeight < initialViewportHeight * 0.8) {
+//       // Keyboard is probably visible
+//       document.querySelector(".chat-input").style.marginTop = "50vh"; // Adjust as needed
+//       chatInput.style.width = '100%';
+//   } else {
+//       // Keyboard is probably hidden
+//       document.querySelector(".chat-input").style.marginTop = "70vh"; // Reset to original position
+//       chatInput.style.width = '70%';
+//   }
+// });
 
 
-chatInput.addEventListener("focus", function() {
-    chatContainer.classList.add("keyboard-active");
-    console.log("Keyboard active");
-    chatInput.style.width = '100%';
-});
+// chatInput.addEventListener("focus", function() {
+//     chatContainer.classList.add("keyboard-active");
+//     console.log("Keyboard active");
+//     chatInput.style.width = '100%';
+// });
 
-chatInput.addEventListener("blur", function() {
-    chatContainer.classList.remove("keyboard-active");
-    console.log("Keyboard active");
-});
+// chatInput.addEventListener("blur", function() {
+//     chatContainer.classList.remove("keyboard-active");
+//     console.log("Keyboard active");
+// });
