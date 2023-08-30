@@ -476,6 +476,14 @@ button:hover{
 }
 
 @media only screen and (max-width: 768px) {
+    :root {
+        --vh: 100vh;
+    }
+    
+    body {
+        height: var(--vh);
+    }
+    
 
     .top-text{
         margin: 0;

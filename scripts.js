@@ -24,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log(sessionId);
 });
 
+function setVhVariable() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+document.querySelector('#user-input').addEventListener('focus', setVhVariable);
+document.querySelector('#user-input').addEventListener('blur', setVhVariable);
+
+window.addEventListener('resize', setVhVariable);
+window.addEventListener('load', setVhVariable);
+
+
 function generateRandomId() {
   return "session_" + Math.random().toString(36).substr(2, 9);
 }
