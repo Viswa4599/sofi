@@ -38,7 +38,7 @@ function resetVhVariable() {
 
 // setVhVariable();
 document.querySelector('#user-input').addEventListener('focus', setVhVariable);
-document.querySelector('#user-input').addEventListener('blur', resetVhVariable);
+// document.querySelector('#user-input').addEventListener('blur', resetVhVariable);
 
 window.addEventListener('resize', setVhVariable);
 window.addEventListener('DOMContentLoaded', setVhVariable);
