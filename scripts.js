@@ -27,24 +27,22 @@ document.addEventListener("DOMContentLoaded", function () {
 function setVhVariable() {
   let vh = window.innerHeight * 0.01;
   console.log("Calculated VH:", vh);
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
   console.log("Set VH as:", `${vh}px`);
 }
 
 function resetVhVariable() {
-  document.documentElement.style.setProperty('--vh', `${initialVh}px`);
+  document.documentElement.style.setProperty("--vh", `${initialVh}px`);
 }
 
-
 // setVhVariable();
-document.querySelector('#user-input').addEventListener('focus', setVhVariable);
+document.querySelector("#user-input").addEventListener("focus", setVhVariable);
 // document.querySelector('#user-input').addEventListener('blur', resetVhVariable);
 
-window.addEventListener('resize', setVhVariable);
-window.addEventListener('DOMContentLoaded', setVhVariable);
+window.addEventListener("resize", setVhVariable);
+window.addEventListener("DOMContentLoaded", setVhVariable);
 
 // window.addEventListener('load', setVhVariable);
-
 
 function generateRandomId() {
   return "session_" + Math.random().toString(36).substr(2, 9);
@@ -55,17 +53,17 @@ function scrollToBottom(element) {
   element.scrollTop = element.scrollHeight;
 }
 
-function playTypingGif(){
+function playTypingGif() {
   var chatWindow = document.getElementById("chat-window");
   var typingGif = document.createElement("div");
   typingGif.className = "message bot";
   typingGif.innerHTML = `<img id="typinganimation" src="assets/typing.gif">`; //<div class = "circle-txt-bot"> SV</div>
-  typingGif.id = 'typing-indicator';
+  typingGif.id = "typing-indicator";
   chatWindow.appendChild(typingGif);
   // document.getElementById("typing-indicator").classList.remove("hidden");
 }
 
-function stopTypingGif(){
+function stopTypingGif() {
   document.getElementById("typing-indicator").remove(); //classList.add("hidden");
 }
 
@@ -96,6 +94,7 @@ function sendMessage() {
     previous_context: current_context,
     initial: initial_text,
     session_id: sessionId,
+    dev: false,
   };
 
   fetch(apiUrl, {
@@ -109,14 +108,13 @@ function sendMessage() {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
-      console.log("RESPONSE: " + response);
       return response.json();
     })
 
     .then((data) => {
       // Add if statement to break text into two depending on length of response
       // document.getElementById("typing-indicator").classList.add("hidden");
+      console.log(data);
       stopTypingGif();
       current_context = data.context;
       var botMessageDiv = document.createElement("div");
@@ -150,32 +148,31 @@ document
 let sendButton = document.getElementById("sendButton");
 sendButton.disabled = modelProcessing; // Disable or enable the button based on the flag
 
+var dropdown = document.getElementById("info-btn-dropdown");
 
-var dropdown = document.getElementById('info-btn-dropdown')
-
-function popUp(){
-  if(down == false){
-    dropdown.style.display = 'flex';
+function popUp() {
+  if (down == false) {
+    dropdown.style.display = "flex";
     down = true;
-  }
-  else{
-    dropdown.style.display = 'none';
+  } else {
+    dropdown.style.display = "none";
     down = false;
   }
-  
 }
 
-
-document.addEventListener('click', function(event) {
-  if (event.target.id == 'info-btn-dropdown' || event.target.id == 'info-btn'||
-  event.target.closest('#info-btn-dropdown') ||
-  event.target.closest('#info-btn')) {
-      return;
+document.addEventListener("click", function (event) {
+  if (
+    event.target.id == "info-btn-dropdown" ||
+    event.target.id == "info-btn" ||
+    event.target.closest("#info-btn-dropdown") ||
+    event.target.closest("#info-btn")
+  ) {
+    return;
   }
 
-  console.log('User clicked/tapped on the screen!');
-  if(down == true){
-    dropdown.style.display = 'none';
+  console.log("User clicked/tapped on the screen!");
+  if (down == true) {
+    dropdown.style.display = "none";
     down = false;
   }
 });
@@ -188,9 +185,9 @@ function openInsta() {
   window.location.href = "https://www.instagram.com/itssofivega/";
 }
 
-const chatInput = document.getElementById("chat-input"); 
+const chatInput = document.getElementById("chat-input");
 const userInput = document.getElementById("user-input");
-const chatContainer = document.querySelector(".chat-container"); 
+const chatContainer = document.querySelector(".chat-container");
 
 // window.addEventListener("resize", function() {
 //   let currentHeight = window.innerHeight;
@@ -205,7 +202,6 @@ const chatContainer = document.querySelector(".chat-container");
 //       chatInput.style.width = '70%';
 //   }
 // });
-
 
 // chatInput.addEventListener("focus", function() {
 //     chatContainer.classList.add("keyboard-active");
