@@ -477,6 +477,24 @@ button:hover{
     /* background: linear-gradient(to right, rgb(105, 105, 206), rgb(181, 133, 199)) !important;  */
 }
 
+.hidden{
+    display: none;
+}
+
+#typing-indicator {
+    /* justify-content: flex-start; */
+    /* padding: 10px; */
+    margin-bottom: auto;
+    height: 45px;
+
+    
+  }
+
+  #typinganimation{
+    height: 30px;
+    animation: typing 1s infinite;
+    padding: 5px;
+  }
 @media only screen and (max-width: 768px) {
     :root {
         --vh: 100vh;

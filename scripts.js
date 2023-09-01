@@ -55,6 +55,20 @@ function scrollToBottom(element) {
   element.scrollTop = element.scrollHeight;
 }
 
+function playTypingGif(){
+  var chatWindow = document.getElementById("chat-window");
+  var typingGif = document.createElement("div");
+  typingGif.className = "message bot";
+  typingGif.innerHTML = `<img id="typinganimation" src="assets/typing.gif">`; //<div class = "circle-txt-bot"> SV</div>
+  typingGif.id = 'typing-indicator';
+  chatWindow.appendChild(typingGif);
+  // document.getElementById("typing-indicator").classList.remove("hidden");
+}
+
+function stopTypingGif(){
+  document.getElementById("typing-indicator").remove(); //classList.add("hidden");
+}
+
 function sendMessage() {
   if (modelProcessing) {
     return; // Exit the function if the bot is still processing
@@ -72,7 +86,8 @@ function sendMessage() {
   userMessageDiv.innerHTML = `<p>${userInput}</p>`; //<div class = "circle-txt-user">YOU</div>
   chatWindow.appendChild(userMessageDiv);
   document.getElementById("user-input").value = "";
-
+  // document.getElementById("typing-indicator").classList.remove("hidden");
+  playTypingGif();
   console.log("USER INPUT: " + userInput);
   var apiUrl =
     "https://jpaeewshfgzmzil5l322xzevue0bbvgl.lambda-url.us-east-1.on.aws/";
@@ -100,6 +115,9 @@ function sendMessage() {
     })
 
     .then((data) => {
+      // Add if statement to break text into two depending on length of response
+      // document.getElementById("typing-indicator").classList.add("hidden");
+      stopTypingGif();
       current_context = data.context;
       var botMessageDiv = document.createElement("div");
       botMessageDiv.className = "message bot";
