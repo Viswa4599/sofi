@@ -17,7 +17,7 @@ var sessionId = "";
 var current_context = "";
 var modelProcessing = false;
 var down = false;
-let initialViewportHeight = window.innerHeight;
+let initialVh = window.innerHeight;
 
 document.addEventListener("DOMContentLoaded", function () {
   sessionId = generateRandomId();

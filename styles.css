@@ -411,7 +411,7 @@ button:hover{
 .info-btn-dropdown{
     display: none;
     position: absolute;
-    background: #333;
+    background: #c9c9c9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 999;
@@ -427,10 +427,11 @@ button:hover{
 }
 
 .info-btn-dropdown h4{
-    position: relative;
+    color: #333;
+    position: relative; 
     height: 40%;
     top: -0.5vh;
-    font: 35px Arial, Helvetica, sans-serif;
+    font: 30px Arial, Helvetica, sans-serif;
     
 }
 
@@ -438,10 +439,10 @@ button:hover{
     position: relative;
     width: 80%;
     border: 1px solid rgb(81, 81, 81);
-    background: linear-gradient(to right, rgb(105, 105, 206), rgb(181, 133, 199)); 
+    background: linear-gradient(to left, #848383, #4f4e4e);
     border-radius: 10px;
     height: 25%;
-    top: -4.8vh;
+    top: -4vh;
     font: 10px;
     margin-bottom: 20px;
 }
@@ -473,6 +474,7 @@ button:hover{
     font-size: 30px;
     display: flex;
     flex-direction: row;         /* Adjust size as needed */
+    background: linear-gradient(to right, rgb(105, 105, 206), rgb(181, 133, 199)) !important; 
 }
 
 @media only screen and (max-width: 768px) {
@@ -548,9 +550,10 @@ button:hover{
     }
 
     .chat-input {
-        width:  90%;
+        width:  95%;
         position: relative; /* Reset the position */
         margin-top: 0; /* Reset the margin */
+        border-radius: 0%;
         
         /* justify-content: end; */
         /* margin-left: 20%; */
@@ -560,7 +563,30 @@ button:hover{
     .user-input{
         font: 16px Arial, Helvetica, sans-serif;
     }
-    
+        
+        
+    #sendButton{
+        padding: 5px 15px;
+        border: none;
+        cursor: pointer;
+        background-color: rgba(84, 84, 84, 0);
+        align-items: center;
+        justify-content: center;
+        background-image: url('assets/send.svg');
+        background-size: cover;
+        /* width: 5%; */
+        background-position: center;
+        transform: rotate(45deg);
+        backface-visibility: hidden;
+        /* border-radius: 50%; */
+        display: flex;
+
+    }
+
+    button:hover{
+        background-image: url("assets/sent.svg");
+    }
+
 
     .message {
         margin: 5px;
